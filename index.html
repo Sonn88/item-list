@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="style.css" >
+</head>
+
+<body>
+
+<div class="main">
+  <div class="list">
+  <h1>Grocery List</h1>
+  <label> Items NEEDED: </label>
+  <input type="text" id="items"name="items">
+   <button id="Submit">Submit</button>
+
+         <p></p>
+  <button class="clearr" id="clear"> Clear</button>
+
+  </div>
+
+
+</div>
+<script>
+    const items = document.getElementById('items');
+     const submit = document.getElementById('Submit');
+     const thing = document.querySelector('p');
+    const clear = document.getElementById('clear')
+    submit.addEventListener("click", function(e){
+        let add = document.createElement('h4');
+        add.innerHTML = `<h2 class="center">`+'.'+items.value;
+        thing.insertAdjacentElement('afterbegin',add);
+    })
+    clear.addEventListener('click',function (e){
+      let gone = document.querySelector('.center');
+        gone.remove();
+    })
+</script>
+</body>
+</html>
